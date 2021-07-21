@@ -13,7 +13,7 @@ namespace FlappyBirdGame
     public partial class Form1 : Form
     {
         int pipeSpeed = 8;
-        int gravity = 5;
+        int gravity = 12;
         int score = 0;
 
 
@@ -25,6 +25,8 @@ namespace FlappyBirdGame
         private void gameTimerEvent(object sender, EventArgs e)
         {
             flappyBird.Top += gravity;
+            pipeDown.Left -= pipeSpeed;
+            pipeTop.Left -= pipeSpeed;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -36,7 +38,7 @@ namespace FlappyBirdGame
         {
             if(e.KeyCode == Keys.Space)
             {
-                gravity = -5;
+                gravity = -12;
             }
         }
 
@@ -44,7 +46,7 @@ namespace FlappyBirdGame
         {
             if (e.KeyCode == Keys.Space)
             {
-                gravity = 5;
+                gravity = 12;
             }
         }
     }

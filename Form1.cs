@@ -24,22 +24,28 @@ namespace FlappyBirdGame
 
         private void gameTimerEvent(object sender, EventArgs e)
         {
-
+            flappyBird.Top += gravity;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void gameKeyIsDown(object sender, KeyEventArgs e)
         {
-
+            if(e.KeyCode == Keys.Space)
+            {
+                gravity = -5;
+            }
         }
 
         private void gameKeyIsUp(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Space)
+            {
+                gravity = 5;
+            }
         }
     }
 }

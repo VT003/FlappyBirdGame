@@ -29,56 +29,58 @@ namespace FlappyBirdGame
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.components = new System.ComponentModel.Container();
+            this.pipeDown = new System.Windows.Forms.PictureBox();
+            this.ground = new System.Windows.Forms.PictureBox();
+            this.pipeTop = new System.Windows.Forms.PictureBox();
+            this.flappyBird = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pipeDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ground)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pipeTop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flappyBird)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pipeDown
             // 
-            this.pictureBox1.Image = global::FlappyBirdGame.Properties.Resources.pipe;
-            this.pictureBox1.Location = new System.Drawing.Point(330, 359);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 199);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pipeDown.Image = global::FlappyBirdGame.Properties.Resources.pipe;
+            this.pipeDown.Location = new System.Drawing.Point(330, 359);
+            this.pipeDown.Name = "pipeDown";
+            this.pipeDown.Size = new System.Drawing.Size(100, 199);
+            this.pipeDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pipeDown.TabIndex = 0;
+            this.pipeDown.TabStop = false;
             // 
-            // pictureBox2
+            // ground
             // 
-            this.pictureBox2.Image = global::FlappyBirdGame.Properties.Resources.ground;
-            this.pictureBox2.Location = new System.Drawing.Point(-7, 550);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(722, 157);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.ground.Image = global::FlappyBirdGame.Properties.Resources.ground;
+            this.ground.Location = new System.Drawing.Point(-7, 550);
+            this.ground.Name = "ground";
+            this.ground.Size = new System.Drawing.Size(722, 157);
+            this.ground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ground.TabIndex = 1;
+            this.ground.TabStop = false;
             // 
-            // pictureBox3
+            // pipeTop
             // 
-            this.pictureBox3.Image = global::FlappyBirdGame.Properties.Resources.pipedown;
-            this.pictureBox3.Location = new System.Drawing.Point(431, -11);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 222);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.pipeTop.Image = global::FlappyBirdGame.Properties.Resources.pipedown;
+            this.pipeTop.Location = new System.Drawing.Point(431, -11);
+            this.pipeTop.Name = "pipeTop";
+            this.pipeTop.Size = new System.Drawing.Size(100, 222);
+            this.pipeTop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pipeTop.TabIndex = 2;
+            this.pipeTop.TabStop = false;
             // 
-            // pictureBox4
+            // flappyBird
             // 
-            this.pictureBox4.Image = global::FlappyBirdGame.Properties.Resources.bird;
-            this.pictureBox4.Location = new System.Drawing.Point(63, 236);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(88, 64);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
+            this.flappyBird.Image = global::FlappyBirdGame.Properties.Resources.bird;
+            this.flappyBird.Location = new System.Drawing.Point(63, 236);
+            this.flappyBird.Name = "flappyBird";
+            this.flappyBird.Size = new System.Drawing.Size(76, 62);
+            this.flappyBird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.flappyBird.TabIndex = 3;
+            this.flappyBird.TabStop = false;
             // 
             // label1
             // 
@@ -90,6 +92,12 @@ namespace FlappyBirdGame
             this.label1.TabIndex = 4;
             this.label1.Text = "Score: 0";
             // 
+            // gameTimer
+            // 
+            this.gameTimer.Enabled = true;
+            this.gameTimer.Interval = 20;
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimerEvent);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -97,16 +105,19 @@ namespace FlappyBirdGame
             this.BackColor = System.Drawing.Color.Aqua;
             this.ClientSize = new System.Drawing.Size(562, 612);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.flappyBird);
+            this.Controls.Add(this.pipeTop);
+            this.Controls.Add(this.ground);
+            this.Controls.Add(this.pipeDown);
             this.Name = "Form1";
             this.Text = "FlappyBird";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameKeyIsDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gameKeyIsUp);
+            ((System.ComponentModel.ISupportInitialize)(this.pipeDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ground)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pipeTop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flappyBird)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,11 +125,12 @@ namespace FlappyBirdGame
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pipeDown;
+        private System.Windows.Forms.PictureBox ground;
+        private System.Windows.Forms.PictureBox pipeTop;
+        private System.Windows.Forms.PictureBox flappyBird;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer gameTimer;
     }
 }
 

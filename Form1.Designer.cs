@@ -42,33 +42,41 @@ namespace FlappyBirdGame
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(329, 494);
+            this.pictureBox1.Image = global::FlappyBirdGame.Properties.Resources.pipe;
+            this.pictureBox1.Location = new System.Drawing.Point(330, 359);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 199);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(12, 550);
+            this.pictureBox2.Image = global::FlappyBirdGame.Properties.Resources.ground;
+            this.pictureBox2.Location = new System.Drawing.Point(-7, 550);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(538, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(722, 157);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(450, 12);
+            this.pictureBox3.Image = global::FlappyBirdGame.Properties.Resources.pipedown;
+            this.pictureBox3.Location = new System.Drawing.Point(431, -11);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox3.Size = new System.Drawing.Size(100, 222);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(29, 241);
+            this.pictureBox4.Image = global::FlappyBirdGame.Properties.Resources.bird;
+            this.pictureBox4.Location = new System.Drawing.Point(63, 236);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox4.Size = new System.Drawing.Size(88, 64);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             // 

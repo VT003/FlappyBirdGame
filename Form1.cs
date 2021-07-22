@@ -25,8 +25,21 @@ namespace FlappyBirdGame
         private void gameTimerEvent(object sender, EventArgs e)
         {
             flappyBird.Top += gravity;
-            pipeDown.Left -= pipeSpeed;
+            pipeBottom.Left -= pipeSpeed;
             pipeTop.Left -= pipeSpeed;
+            scoreText.Text = score.ToString();
+
+            if(pipeBottom.Left < -150)
+            {
+                pipeBottom.Left = 800;
+                score++;
+            }
+
+            if(pipeTop.Left < -180)
+            {
+                pipeTop.Left = 850;
+                score++;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,7 +51,7 @@ namespace FlappyBirdGame
         {
             if(e.KeyCode == Keys.Space)
             {
-                gravity = -12;
+                gravity = -15;
             }
         }
 
@@ -46,8 +59,13 @@ namespace FlappyBirdGame
         {
             if (e.KeyCode == Keys.Space)
             {
-                gravity = 12;
+                gravity = 15;
             }
+        }
+
+        private void endGame()
+        {
+
         }
     }
 }
